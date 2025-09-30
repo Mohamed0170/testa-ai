@@ -1,26 +1,22 @@
 {
-  "background_color": "#ffffff",
-  "description": "Smart feedback for your dream job!",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "testa-ai.vercel",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "testa-ai.vercel",
+  "name": "Testa AI",
+  "short_name": "Testa",
+  "description": "Track your applications & resume ratings with Testa AI",
   "start_url": "/",
-  "theme_color": "#ffffff",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://testa-ai.vercel.app/favicon.ico",
-      "type": "image/x-icon",
-      "isSquare": false,
-      "isPng": false,
-      "isWebp": false,
-      "isJpg": false,
-      "width": 0,
-      "is512x512": false,
-      "is256x256": false,
-      "is192x192": false
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
