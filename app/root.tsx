@@ -9,8 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import {usePuterStore} from "~/lib/puter";
-import {useEffect} from "react";
+import { usePuterStore } from "~/lib/puter";
+import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -29,7 +29,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { init } = usePuterStore();
 
   useEffect(() => {
-    init()
+    init();
+
+    // تسجيل الـ Service Worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) => {
+            console.log("✅ Service Worker registered:", registration);
+          })
+          .catch((error) => {
+            console.error("❌ Service Worker registration failed:", error);
+          });
+      });
+    }
   }, [init]);
 
   return (
@@ -83,4 +97,3 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     </main>
   );
 }
-
